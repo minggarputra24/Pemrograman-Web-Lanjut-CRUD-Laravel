@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/','MahasiswaController@index');
 Route::get('/mahasiswa','MahasiswaController@index');
 
 Route::get('/mahasiswa/tambah','MahasiswaController@tambah');
@@ -23,6 +24,6 @@ Route::get('/mahasiswa/detail/{id}','MahasiswaController@detail');
 
 Route::get('/mahasiswa/edit/{id}','MahasiswaController@edit');
 
-Route::post('/mahasiswa/update','MahasiswaController@update');
+Route::post('/mahasiswa/update/{id}','MahasiswaController@update');
 
 Route::get('/mahasiswa/hapus/{id}','MahasiswaController@hapus');
