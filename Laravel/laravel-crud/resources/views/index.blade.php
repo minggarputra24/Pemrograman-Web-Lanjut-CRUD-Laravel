@@ -16,6 +16,7 @@
             <tr>
                 <th>Nama</th>
                 <th>NIM</th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>

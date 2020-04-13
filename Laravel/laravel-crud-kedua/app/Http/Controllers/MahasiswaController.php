@@ -51,4 +51,5 @@ class MahasiswaController extends Controller
         $mahasiswa->delete();
         return redirect('/mahasiswa');
     }
+
 }

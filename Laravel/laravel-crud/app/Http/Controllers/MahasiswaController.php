@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request; 
-use Illuminate\Support\Facades\DB; 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
 {
     public function index(){
-        //mengambil data dari tabel mahasiswa
         $mahasiswa = DB::table('mahasiswa')->get();
-
-        //mengirim data mahasiswa ke view index
-        return view('index',['mahasiswa' => $mahasiswa]);
+        return view('index', ['mahasiswa' => $mahasiswa]);
     }
-
+    
     public function tambah(){
-        //memanggil view tambah
         return view('tambah');
     }
 
     public function simpan(Request $request){
-        //insert data ke table mahasiswa
         DB::table('mahasiswa')->insert([
             'nama' => $request->namamhs,
             'nim' => $request->nimmhs,
@@ -29,6 +24,7 @@ class MahasiswaController extends Controller
             'jurusan' => $request->jurusanmhs
         ]);
         return redirect('/mahasiswa');
+        
     }
 
     public function detail($id){
@@ -62,4 +58,5 @@ class MahasiswaController extends Controller
 
         return redirect('/mahasiswa');
     }
+
 }
